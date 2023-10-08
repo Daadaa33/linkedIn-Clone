@@ -1,3 +1,3 @@
-#welcome to the linkedIn Clone
+# welcome to the linkedIn Clone
 
 ## Daadaa

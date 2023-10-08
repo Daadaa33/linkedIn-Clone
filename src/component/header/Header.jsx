@@ -19,7 +19,7 @@ import LinearScaleIcon from '@mui/icons-material/LinearScale';
 
 const Header = () => {
   return (
-    <div className='fixed top-0 right-0 w-full h-[54px] bg-white'>
+    <div className='fixed top-0 right-0 w-full h-[54px] z-50 bg-white'>
       <div className="max-w-6xl h-full bg-white  mx-auto">
         <div className='flex items-center md:justify-evenly gap-8 md:gap-0 justify-start  p-3 h-full w-full '>
         {/* header left */}

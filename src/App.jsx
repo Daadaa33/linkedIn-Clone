@@ -9,7 +9,7 @@ function App() {
     <div className='relative bg-[#F3F2F0] w-full h-full'>
       <Header />
     <div className='max-w-6xl  mx-auto'>
-      <div className="pt-20">
+      <div className=" pt-14 lg:pt-20">
         <FeedPage />
       <Outlet />
       </div>
