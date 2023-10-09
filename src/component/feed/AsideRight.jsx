@@ -28,7 +28,7 @@ const AsideRight = () => {
 
   return (
     <div>
-      <div className="border-box w-[500px] lg:w-[276px] rounded-[0.8rem] bg-white p-[1.2rem] self-center">
+      <div className="p-2 rounded-lg border bg-card text-card-foreground shadow-sm">
         <div className="flex flex-col gap-2">
           <div className="flex justify-between items-center">
             <h1 className="text-[16px] font-semibold">Add to your feed</h1>

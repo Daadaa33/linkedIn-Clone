@@ -6,19 +6,19 @@ import {Outlet} from 'react-router-dom'
 function App() {
 
   return (
-    <div className='relative bg-[#F3F2F0] w-full h-full'>
+    <div className=" bg-[#F3F2F0]">
       <Header />
-    <div className='max-w-6xl  mx-auto'>
-      <div className=" pt-14 lg:pt-20">
-        <FeedPage />
-      <Outlet />
+      <div className="max-w-6xl  mx-auto">
+        <div className="pt-14">
+          <FeedPage />
+          <Outlet />
+        </div>
+        {/* App body */}
+        {/* SideBar */}
+        {/* Feed */}
       </div>
-      {/* App body */}
-      {/* SideBar */}
-      {/* Feed */}
     </div>
-    </div>
-  )
+  );
 }
 
 export default App

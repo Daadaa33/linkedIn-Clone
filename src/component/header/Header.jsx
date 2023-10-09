@@ -4,7 +4,7 @@ import HeaderOptions from './HeaderOptions';
 import { Link } from 'react-router-dom';
 import daadaa from "../../assets/daadaa.jfif"
 
-import {CgMenuGridR} from "react-icons/cg"
+import {CgMenuGridR, CgMoreVerticalAlt} from "react-icons/cg"
 
 import HouseIcon from '@mui/icons-material/House';
 import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
@@ -73,7 +73,7 @@ const Header = () => {
         </div>
 
         <div className='sm:hidden'>
-        <LinearScaleIcon  className='w-6 h-6 text-[#666666] group-hover:text-black '/>
+        <CgMoreVerticalAlt  className='w-7 h-7 text-[#666666] group-hover:text-black '/>
         </div>
 
       </div>
