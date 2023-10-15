@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const userSlice = createSlice({
     name: 'user',
     initialState: {
-        user: "daadaa",
+        user: "null",
     },
     // We need a dispatch, an action to change the user.
     reducers: {

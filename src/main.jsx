@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import LoginHome from './component/Login/LoginHome.jsx'
 import FeedPage from './component/feed/FeedPage.jsx'
 import { selectUser } from './features/UserSlice.jsx'
 import { Provider } from 'react-redux'
 import { store } from './store.jsx'
+import Login from './Pages/login/Login.jsx'
 
 
 const router = createBrowserRouter([
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     children : [
       {
         path : `/login`,
-        element : <LoginHome />
+        element : <Login />
       },
       {
         path : "/Feed",

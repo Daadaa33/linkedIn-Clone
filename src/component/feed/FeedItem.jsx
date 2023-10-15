@@ -6,6 +6,8 @@ import { TfiComment } from "react-icons/tfi";
 import { FiSend } from "react-icons/fi";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import {HiMiniArrowPathRoundedSquare} from "react-icons/hi2" 
+import {  setlike } from "../../features/LikesSlice";
+import { useDispatch } from "react-redux";
 
 function extractDomain(url){
   const urlObj = new URL(url);
@@ -40,9 +42,13 @@ const LikesCountRow = ({  stats,}) => {
 };
 
 const Action = ({ text, icon }) => {
+ const dispatch = useDispatch()
+  const handelLike = () => {
+    dispatch(setlike())
+  }
   return (
-    <div className="p-2 rounded hover:bg-zinc-200 flex flex-row text-zinc-500 text-sm items-center cursor-pointer transition-all">
-      <span>{icon}</span>
+    <div onClick={handelLike} className="p-2 rounded hover:bg-zinc-200 flex flex-row text-zinc-500 text-sm items-center cursor-pointer transition-all">
+      <span >{icon}</span>
       <span className="font-semibold ml-2 hidden sm:inline">{text}</span>
     </div>
   );

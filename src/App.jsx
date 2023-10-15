@@ -1,22 +1,29 @@
-import LoginHome from './component/Login/LoginHome'
+import { useSelector } from 'react-redux'
 import FeedPage from './component/feed/FeedPage'
 import Header from './component/header/Header'
 import {Outlet} from 'react-router-dom'
+import { selectUser } from './features/UserSlice'
+import Login from './Pages/login/Login'
 
 function App() {
-
+  const user = useSelector(selectUser)
   return (
     <div className=" bg-[#F3F2F0]">
-      <Header />
-      <div className="max-w-6xl  mx-auto">
-        <div className="pt-14">
-          <FeedPage />
-          <Outlet />
-        </div>
-        {/* App body */}
-        {/* SideBar */}
-        {/* Feed */}
-      </div>
+      {user === null ? (
+        <>
+        <Header />
+        <Login />
+        </>
+      ) : (
+        <>
+          <div className="max-w-6xl  mx-auto">
+            <div className="pt-14">
+              <FeedPage />
+              <Outlet />
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

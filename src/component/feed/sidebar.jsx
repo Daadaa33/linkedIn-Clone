@@ -37,7 +37,7 @@ const MyProfileProfession = () => {
       <div className="text-md font-medium hover:underline cursor-pointer">
         Abdikadir qulle
       </div>
-      <div className="text-xs text-zinc-500 mt-1">Senior Software Engineer</div>
+      <div className="text-xs text-zinc-500 mt-1">Software Engineer</div>
     </a>
   );
 };

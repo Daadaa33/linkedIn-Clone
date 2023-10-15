@@ -1,10 +1,8 @@
-// import { FeedItem } from "./FeedItem";
-// import { WriteNewPostCard } from "./WriteNewPostCard";
-// import {  DropdownMenu,  DropdownMenuTrigger,  DropdownMenuContent, DropdownMenuItem,} from "./primitives/DropdownMenu";
-// import { Separator } from "./primitives/Separator";
 
+import { useSelector } from "react-redux";
 import { FeedItem } from "./FeedItem";
 import { WriteNewPostCard } from "./WriteNewPostCard";
+import { selectLike } from "../../features/LikesSlice";
 
 const SortByDivider = () => {
   return (
@@ -13,24 +11,25 @@ const SortByDivider = () => {
          <div className="bg-zinc-300" ></div> 
       </div> */}
       <div className="text-zinc-500 text-xs pl-2 justify-end">
-            <div className="cursor-pointer flex  gap-4  w-[8rem]">
-              <span >Sort by: </span>
-              <select className="bg-[#F3F2F0] outline-none">
-            <option>
-              <span className="font-semibold text-zinc-800">Top</span>
+        <div className="cursor-pointer flex  gap-4  w-[8rem]">
+          <span>Sort by: </span>
+          <select className="bg-[#F3F2F0] outline-none">
+            <option className="font-semibold text-zinc-800 p-2" value="Top">
+              Top
             </option>
-            <option className="font-semibold text-zinc-800">
-              <span className="font-semibold text-zinc-800">Recent</span>
+            <option className="font-semibold text-zinc-800" value="Recent">
+              Recent
             </option>
           </select>
-            </div>
-          </div>
         </div>
-   
+      </div>
+    </div>
   );
 };
 
 export const  Main = () => {
+
+  const setaLikes = useSelector(selectLike)
   return (
     <div style={{ gridArea: "main" }}>
       <WriteNewPostCard />
@@ -55,7 +54,7 @@ export const  Main = () => {
           connectionDegree: "1st",
         }}
         stats={{
-          likes: 5788,
+          likes: setaLikes,
           comments: 139,
           reposts: 593,
         }}
