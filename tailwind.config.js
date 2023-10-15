@@ -1,3 +1,6 @@
+import colors from "tailwindcss/colors"
+
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -46,6 +49,14 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        secondaryHeader: {
+          DEFAULT: colors.neutral[200],
+          hover: colors.neutral[300],
+          border: colors.neutral[400],
+          text: colors.neutral[500],
+          dark: colors.neutral[800],
+          ["dark-hover"]: colors.neutral[900],
         },
       },
       borderRadius: {

@@ -15,28 +15,34 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
 import LinearScaleIcon from '@mui/icons-material/LinearScale';
+import HeaderSearch from './HeaderSearch';
+import { useState } from 'react';
 
 
 const Header = () => {
+  const [isActive, setIsActive] = useState(false)
   return (
     <div className='fixed top-0 right-0 w-full h-[54px] z-50 bg-white'>
       <div className="max-w-6xl h-full bg-white  mx-auto">
-        <div className='flex items-center md:justify-evenly gap-8 md:gap-0 justify-start  p-3 h-full w-full '>
+
+        <div className={`${isActive ? "hidden " : "flex"} items-center md:justify-evenly gap-8 md:gap-0 justify-evenly  p-3 h-full w-full `}>
         {/* header left */}
         <div className='flex items-center gap-1.5'>
           <Link to='/'>
             <img src={linkedImg} alt="" className='object-contain w-10 '/>
           </Link>
-            <div className='md:bg-[#EDF3F8]  rounded hidden lg:block'>
-                <SearchIcon sx={{fontSize : 20}} className='text-[#666666] cursor-pointer'/>
-                <input type="text" className='outline-none h-[34px] rounded text-sm  w-[200px] bg-[#EDF3F8]' placeholder='Search'/>
+            <div className='md:bg-[#EDF3F8]  rounded hidden lg:block '>
+                <SearchIcon sx={{fontSize : 20}} className='text-[#666666] cursor-pointer'
+                />
+                <input type="text" className='outline-none h-[34px] rounded text-sm   w-[200px] bg-[#EDF3F8]' placeholder='Search'/>
             </div>
             
             <div className='pl-4 flex flex-col gap lg:hidden items-center group'>
-                <SearchIcon sx={{fontSize : 29}} className='text-[#666666] group-hover:text-black cursor-pointer'/>
+                <SearchIcon sx={{fontSize : 29}} className='text-[#666666] group-hover:text-black cursor-pointer' onClick={() => setIsActive(true)}/>
                 <span className='text-[12px] md:block hidden text-[#666666] group-hover:text-black'>Search</span>
             </div>
         </div>
+        
         {/* header right */}
         <div className='flex gap-5 md:gap-4 items-center sm:gap-8 cursor-pointer '>
         <HeaderOptions Icon={< HouseIcon sx={{fontSize : 27 , color: "g" }} className='hover:text-black  text-[#666666]' />} title="Home" />
@@ -78,6 +84,14 @@ const Header = () => {
 
       </div>
         </div>
+
+        {/* header search */}
+        <div className={`${isActive ? "flex " : "hidden"}`}>
+
+        {isActive && (
+          <HeaderSearch setIsActive={setIsActive} />
+          )}
+          </div>
         </div>
     </div>
   )

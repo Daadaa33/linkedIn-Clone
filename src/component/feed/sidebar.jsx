@@ -31,7 +31,7 @@ const MyProfileProfession = () => {
   return (
     <a
       className="flex justify-center items-center flex-col mt-4 pb-4 border-b border-slate-200"
-      href="https://www.linkedin.com/in/abdikadir-abdirahman-5853bb255/"
+      // href="https://www.linkedin.com/in/abdikadir-abdirahman-5853bb255/"
       target="_blank"
     >
       <div className="text-md font-medium hover:underline cursor-pointer">
