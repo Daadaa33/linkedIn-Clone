@@ -57,7 +57,7 @@ const Header = () => {
             </Link>
             <div
               className={`md:bg-[#EDF3F8] w-[240px] relative  rounded hidden lg:block ${
-                isOpen ? "isOpen" : ""
+                isOpen ? "isOpen duration-200 translate-x-1" : ""
               } `}
             >
               <SearchIcon
@@ -67,7 +67,7 @@ const Header = () => {
               <input
                 onFocus={inputFocus}
                 type="text"
-                className={`outline-none px-2 pl-[2rem] h-[34px] w-full rounded text-sm   bg-[#EDF3F8] `}
+                className={`outline-none px-2 pl-[2rem] h-[34px] w-full rounded text-md   bg-[#EDF3F8] `}
                 placeholder="Search"
               />
             </div>

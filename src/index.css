@@ -139,7 +139,6 @@ body {
 
 
 .isOpen {
-  border: 3px solid black;
-  width: 310px;
-  /* background-color: red; */
+  border: 2px solid black;
+  width: 350px;
 }

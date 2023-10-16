@@ -62,7 +62,8 @@ const Join = styled.a`
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.6);
   margin-right: 12px;
-  &:hover {
+  cursor: pointer;
+   &:hover {
     background-color: rgba(0, 0, 0, 0.08);
     color: rgba(0, 0, 0, 0.9);
     text-decoration: none;
@@ -79,6 +80,7 @@ const SignIn = styled.a`
   line-height: 40px;
   padding: 10px 24px;
   text-align: center;
+  cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
   &:hover {
     background-color: rgba(112, 181, 249, 0.15);

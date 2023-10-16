@@ -16,13 +16,13 @@ function App() {
   }
   return (
     <div className=" bg-[#F3F2F0]">
-      <Header />
       {user === null ? (
         <>
           <Login />
         </>
       ) : (
         <>
+        <Header />
           <div className="max-w-6xl  mx-auto">
             <div className="pt-14">
               <Outlet />
