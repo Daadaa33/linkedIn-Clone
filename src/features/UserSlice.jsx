@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const userSlice = createSlice({
     name: 'user',
     initialState: {
-        user: null,
+        user: "daadaa",
         isSearchOpen : false,
         isActive : false,
         IsUserOpen : false
