@@ -136,3 +136,10 @@ body {
     box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);
     overflow: hidden;
 }
+
+
+.isOpen {
+  border: 3px solid black;
+  width: 310px;
+  /* background-color: red; */
+}
