@@ -17,17 +17,14 @@ const router = createBrowserRouter([
     errorElement : "error 404 not found",
     children : [
       {
-        path : "/login",
+        path : "/",
         element : <Login />
       },
       {
         path : "/Feed",
         element : <FeedPage />
       },
-      {
-        path : "/",
-        element : <FeedPage />
-      },
+     
       
     ]
   }

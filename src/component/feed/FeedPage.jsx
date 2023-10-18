@@ -5,12 +5,13 @@ import {Sidebar} from './sidebar'
 
 
 import "./feed.css"
-import {   selectIsOpen,  } from '../../features/UserSlice'
+import {   selectIsOpen, selectUser,  } from '../../features/UserSlice'
 import { useSelector } from 'react-redux'
 
 const FeedPage = () => {
   const isopen = useSelector(selectIsOpen)
-  console.log(isopen)
+  const user = useSelector(selectUser)
+
   return (
     <div className="w-full h-full ">
       {/* aside left */}

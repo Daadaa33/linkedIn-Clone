@@ -6,8 +6,11 @@ import topImg from "../../assets/topimg.jfif"
 import AddIcon from '@mui/icons-material/Add';
 import { BsBookmark } from 'react-icons/bs';
 import {IoIosArrowDown, IoIosArrowUp} from "react-icons/io"
+import { UserAuth } from "../../context/AuthContext";
+import { Avatar } from "@mui/material";
 
 const MyProfileHeader = () => {
+  const {user} = UserAuth()
   return (
     <div>
       <div
@@ -18,16 +21,15 @@ const MyProfileHeader = () => {
         }}
       ></div>
       <div className="flex justify-center">
-        <img
-          className="w-16 h-16 rounded-full overflow-hidden border-white border-2 mt-[-32px] z-1"
-          src={daadaa}
-/>
+          <img className="w-16 h-16 rounded-full overflow-hidden border-white border-2 mt-[-32px] z-1"
+          src={user?.photoURL || daadaa}/>
       </div>
     </div>
   );
 };
 
 const MyProfileProfession = () => {
+  const {user} = UserAuth()
   return (
     <a
       className="flex justify-center items-center flex-col mt-4 pb-4 border-b border-slate-200"
@@ -35,7 +37,7 @@ const MyProfileProfession = () => {
       target="_blank"
     >
       <div className="text-md font-medium hover:underline cursor-pointer">
-        Abdikadir qulle
+        {user?.displayName || "Ali Abdikarim"}
       </div>
       <div className="text-xs text-zinc-500 mt-1">Software Engineer</div>
     </a>

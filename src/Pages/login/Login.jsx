@@ -3,12 +3,36 @@ import styled from "styled-components";
 import logo from "../../assets/images/login-logo.svg"
 import logoHero from "../../assets/images/login-hero.svg"
 import google from "../../assets/images/google.svg"
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { useState } from "react";
+import { UserAuth } from "../../context/AuthContext";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../features/UserSlice";
 
 const Login = (props) => {
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const [credentails, setCredentials] = useState({});
+  const {user, googleSignIn} = UserAuth()
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
+      navigate( "/")
+      console.log("welcome your are sign In")
+      dispatch(setUser(user))
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
   return (
     <Container>
       <Nav>
-        <a href="/">
+        <a>
           <img src={logo} alt="" />
         </a>
         <div>
@@ -22,7 +46,7 @@ const Login = (props) => {
           <img src={logoHero} alt="" />
         </Hero>
         <Form>
-          <Google >
+          <Google  onClick={handleGoogleSignIn}>
             <img src={google} alt="" />
             Sign in with Google
           </Google>

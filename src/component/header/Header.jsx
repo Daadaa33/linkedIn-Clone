@@ -1,7 +1,7 @@
 import logo from "../../assets/linkedPngHeader.png"
 import daadaa from "../../assets/daadaa.jfif"
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import HeaderOptions from './HeaderOptions';
@@ -17,13 +17,16 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import { SetUserOpen, selectIsActive,  selectIsOpen,  selectIsUserOpen,  setIsActive, setIsSearchOpen } from '../../features/UserSlice';
+import { UserAuth } from "../../context/AuthContext";
 
 
 const Header = () => {
   const isActive = useSelector(selectIsActive)
   const isOpen = useSelector(selectIsOpen)
- const  isUserOpen = useSelector(selectIsUserOpen)
+  const  isUserOpen = useSelector(selectIsUserOpen)
   const dispatch = useDispatch()
+  const {logOut} = UserAuth()
+  const navigate = useNavigate()
 
   const toggle = () => {
      dispatch(setIsActive(true))
@@ -42,6 +45,17 @@ const Header = () => {
   const UserOpen = () => {
     dispatch(SetUserOpen(!isUserOpen))
   }
+
+  const handleSignOut = async () => {
+    try {
+      await logOut()
+
+      console.log("log out")
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div className="fixed top-0 right-0 w-full h-[54px] z-50 bg-white">
       <div className="max-w-6xl h-full bg-white  mx-auto">
@@ -159,7 +173,9 @@ const Header = () => {
               </div>
               {isUserOpen && (
                 <div className="fixed top-[3rem]  bg-white w-[13rem] h-[20rem] p-2  rounded">
-                  <button className="rounded-md text-center font-semibold text-lg w-full px-2 py-3 bg-[#666666] text-white">
+                  <button className="rounded-md text-center font-semibold text-lg w-full px-2 py-3 bg-[#666666] text-white"
+                  onClick={handleSignOut}
+                  >
                     Log out
                   </button>
                 </div>

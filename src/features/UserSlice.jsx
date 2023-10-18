@@ -4,14 +4,14 @@ import { createSlice } from '@reduxjs/toolkit';
 export const userSlice = createSlice({
     name: 'user',
     initialState: {
-        user: "daadaa",
+        user: null,
         isSearchOpen : false,
         isActive : false,
         IsUserOpen : false
         
     },
     reducers: {
-        login: (state, action) => {
+        setUser: (state, action) => {
             state.user = action.payload;
         },
         logout: (state) => {
@@ -29,7 +29,7 @@ export const userSlice = createSlice({
     },
 });
 
-export const { login, logout , setIsSearchOpen ,setIsActive ,SetUserOpen } = userSlice.actions;
+export const { setUser, logout , setIsSearchOpen ,setIsActive ,SetUserOpen } = userSlice.actions;
 
 export const selectUser = state => state.user.user;
 export const selectIsOpen = state => state.user.isSearchOpen;
